@@ -1,0 +1,251 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>Unknown</title>
+	<meta name="generator" content="LibreOffice 5.3.6.1 (Linux)"/>
+	<meta name="author" content="LI, Jinfeng"/>
+	<meta name="created" content="2018-09-19T05:31:04"/>
+	<meta name="changedby" content="calibre"/>
+	<meta name="changed" content="2018-09-19T05:31:04"/>
+	<meta name="AppVersion" content="03.0030"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="true"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; line-height: 120% }
+	</style>
+</head>
+<body lang="en" dir="ltr">
+<p style="margin-bottom: 0in; border-top: none; border-bottom: 1.50pt solid #000001; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.01in; padding-left: 0in; padding-right: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%; page-break-before: auto; page-break-after: auto">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">http://www.pantherdb.org/help/PANTHERhelp.jsp</span></span></font></font></font></p>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><b>CONTENTS</b></p>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<ol type="I">
+	<li/>
+<p style="margin-bottom: 0in; line-height: 115%"><u><b>Get
+	information about a small RNA of interest</b></u></p>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p style="margin-bottom: 0in"><u>Search by name:  <br/>
+</u><br/>
+
+			</p>
+			<p>Enter a search small RNA name in the MiRNA Name search box and
+			press the “Search” button. Please pay attention that only the
+			full name of a small RNA can be identified (e.g.:
+			hsa-miR-181b-5p).  For miRNA, please include three letter species
+			abbreviation (e.g.: <br/>
+hsa) -- mir/miR -- number (e.g.: 208) --
+			qualifier (e.g.: b) -- 3p/5p (if has). 
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-left: 0.75in; margin-bottom: 0in; line-height: 115%">
+<br/>
+
+</p>
+<ol type="I" start="2">
+	<li/>
+<p style="margin-bottom: 0in; line-height: 115%"><u><b>NMTSI,
+	ATSI, potential regulatory lineage, and potential tissues
+	specificity </b></u>
+	</p>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Probe: </u>The probe set ID on Affymetrix® miRNA 4.0 array
+			is a unique number. The probe set name has the accession number
+			and an Affymetrix suffix (e.g., “_st”).</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Name:</u> The name is the transcript ID of a small RNA. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>NMTSI:</u> Normalized maximum timepoint specificity index
+			(NMTSI) is the index of the specificity of a small RNA that is
+			potentially changed in one lineage. NMTSI values are ranging from
+			0.33 to 1. The small RNA with NMTSI value 0.33 is either
+			upregulated or unchanged together in all lineages, while the small
+			RNA with NMTSI value 1 is indicated to be uniquely upregulated in
+			only one lineage.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>ATSI: </u>Across-tissue specificity index (ATSI) is the
+			index of the specificity of a small RNA that is potentially
+			expressed in one tissue. ATSI values are ranging from 0 to 1. The
+			small RNA with ATSI value 0 is distributed evenly in all tissues,
+			while the small RNAs with ATSI value 1 is highly expressed in one
+			tissue. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Potential regulatory lineage: </u>For a certain small RNA,
+			comparing the timepoint specificity index (TSI) of three lineages,
+			the lineage with the maximum TSI is considered as its potential
+			regulatory lineage. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Potential tissue specificity:</u> For a certain small RNA,
+			comparing the normalized expression values of day 10 of three
+			lineages, the lineage with the maximum expression value is
+			considered as the one that it is specifically expressed in. 
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<ol type="I" start="3">
+	<li/>
+<p style="margin-bottom: 0in; line-height: 115%"><u><b>Fold
+	change </b></u>
+	</p>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Abbreviation:</u> HD: hepatocyte differentiation; KD:
+			nephron progenitor differentiation; ND: neural progenitor
+			differentiation. Number (0, 3, 6, 10): induction day. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Lineage differentiation:</u> Hepatocytes, renal progenitors,
+			and neural progenitors are the representative lineage of three
+			germ layers. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Fold change:</u> Relative expression value of small RNAs in
+			three lineages. The expression values of the starting day (HD 0,
+			KD 0, ND 0) are normalized as 0 ignoring the raw expression
+			values. The expression values of other days are compared to day 0
+			of the corresponding lineage. 
+			</p>
+		</td>
+	</tr>
+</table>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<ol type="I" start="4">
+	<li/>
+<p style="margin-bottom: 0in; line-height: 115%"><u><b>Spatiotemporal
+	specificity</b></u></p>
+</ol>
+<p style="margin-bottom: 0in; font-variant: normal; letter-spacing: normal; font-style: normal; line-height: 115%">
+<span style="display: inline-block; border: none; padding: 0in"><font face="Calibri, serif"><font size="3" style="font-size: 12pt"><span style="background: #ffffff"><font color="#000000">Spatiotemporal
+specificity consists of Regulatory lineage specificity and Tissue
+specificity. </span></span></font></font></font>
+</p>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Abbreviation:</u> IH: immature hepatocytes; MM: metanephric
+			mesenchyme; NPC: neural progenitor cells.   <br/>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Specific regulatory lineage:</u> After intersection with the
+			list of differentially expressed small RNA (absolute fold change &gt;
+			2, P value &lt; 0.05), the small RNAs that specifically regulate
+			lineage differentiation (HD, KD, and ND) are identified. The
+			lineages that they specifically regulate are displayed. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>Tissue specificity:</u> After intersection with the list of
+			differentially expressed small RNA, the small RNAs that are
+			specifically expressed in particular tissues (IH, MM, and NPC) are
+			identified.  <br/>
+<br/>
+
+			</p>
+		</td>
+	</tr>
+</table>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<ol type="I" start="5">
+	<li/>
+<p style="margin-bottom: 0in; line-height: 115%"><u><b>miRNA
+	family distribution</b></u></p>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>miRNA member:</u> The name of a miRNA family member. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>miRNA family:</u> The miRNA family that a particular mature
+			miRNA belongs to. Please pay attention that only the miRNA family
+			containing at least five members will be displayed. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p><u>miRNA family distribution figure:</u> Inside each family,
+			the number of IH-, MM-, NPC-specific family members were compared,
+			and the proportions were presented as percentage stacked bar plot.
+			The number of total family members is shown above the columns with
+			balloons, representing the family size. The potential tissue
+			specificity of particular miRNAs (IH, MM, or NPC) indicates their
+			location in the stack bars (red, yellow or green). 
+			</p>
+		</td>
+	</tr>
+</table>
+<p style="margin-left: 1in; margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<p style="margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+</body>
+</html>

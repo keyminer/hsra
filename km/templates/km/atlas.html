@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Atlas</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/km/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Add custom CSS here -->
+    <style>
+    body {
+        margin-top: 60px;
+    }
+
+    ol {
+        list-style-position: inside;
+        padding-left:0;
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    td, th {
+        border: 1px solid #999;
+        padding:0.5rem;
+        text-align: left;
+    }
+
+    .navbar-custom {
+        background-color: #234f7e;
+    }
+    </style>
+
+</head>
+
+<body style="">
+
+    <!--<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">-->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <!--
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                -->
+                <a class="navbar-brand" href="."><font color="white">Home</font></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="atlas"><font color="white">Atlas</font></a>
+					</li>
+                    <li><a href="tsi"><font color="white">TSI</font></a>
+					</li>
+                    <li><a href="distribution"><font color="white">Family Distribution</font></a>
+					</li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- <p><img src="/static/km/logo.png" width = "10%" /> &nbsp &nbsp <u><font size="7" color="#0B75b9"><b>Human</b></font><font size="7" color="#F12723"><b> Small RNA</b></font><font size="7" color="#EA7D60"><b> Atlas</b></font></u> </p>
+                -->
+                <p><img src="/static/km/logo.png" width = "100%" /></p>
+                
+            </div>
+        </div>
+        <hr>
+		
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" value="search">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+            <p>Basic:</p>
+            <table>
+                <tr>
+                    <th>Probe</th>
+                    <th>Name</th>
+                    <th>NMTSI</th>
+                    <th>ASI</th>
+                    <th>Potential Specificity (NMTSI)</th>
+                    <th>Potential Specificity (ASI)</th>
+                </tr>
+                {% for result in results %}
+                <tr>
+                    <td>{{result.probeid}}</td>
+                    <td>{{result.name}}</td>
+                    <td>{{result.nmtsi}}</td>
+                    <td>{{result.atsi}}</td>
+                    <td>{{result.potential_regulatory_lineage}}</td>
+                    <td>{{result.potential_tissue_specificity}}</td>
+                </tr>
+            {% endfor %}
+            </table>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+<p>Fold Change: </p>
+<table>
+    <tr>
+        <th>HD0</th>
+        <th>HD3</th>
+        <th>HD6</th>
+        <th>HD10</th>
+        <th>KD0</th>
+        <th>KD3</th>
+        <th>KD6</th>
+        <th>KD10</th>
+        <th>ND0</th>
+        <th>ND3</th>
+        <th>ND6</th>
+        <th>ND10</th>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{result.hd0}}</td>
+        <td>{{result.hd3}}</td>
+        <td>{{result.hd6}}</td>
+        <td>{{result.hd10}}</td>
+        <td>{{result.kd0}}</td>
+        <td>{{result.kd3}}</td>
+        <td>{{result.kd6}}</td>
+        <td>{{result.kd10}}</td>
+        <td>{{result.nd0}}</td>
+        <td>{{result.nd3}}</td>
+        <td>{{result.nd6}}</td>
+        <td>{{result.nd10}}</td>
+    </tr>
+{% endfor %}
+</table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+<p>Spatiotemporal Specificity:</p>
+<table>
+    <tr>
+        <th>Actual Specificity (NMTSI)</th>
+        <th>Actual Specificity (ASI)</th>
+    </tr>
+    {% for result in results %}
+    <tr>
+        <td>{{result.specific_regulatory_linearge}}</td>
+        <td>{{result.tissue_specificity}}</td>
+    </tr>
+{% endfor %}
+</table>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+<p> miRNA Family Distribution:</p>
+<ul>
+    <li> miRNA Member: {{results.first.name}}, </li>
+    <li> miRNA Family: 
+        {% if results.first.family_member != "-"  %}
+            {{results.first.family_member}}  
+        {% else %}
+{{ "not belong to the miRNA family containing at least 5 mature miRNAs"}}
+        {% endif %}
+     </li>
+</ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+
+{% if results.first.family_member and results.first.family_member != "#N/A" %}
+    {% load static %}
+    <img src="/static/km/mirna_dis.png" width=81% height=63% />
+{% endif %}
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><b>Explanation</b></p>
+
+<ol type="I" padding-left="0">
+	<li/>&nbsp<u><b>Get information about a small RNA of interest</b></u>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Search by name</u>: Enter a search small RNA name in the MiRNA Name search box and press the “Search” button. Please pay attention that only the full name of a small RNA can be identified (e.g.: hsa-miR-181b-5p).  For miRNA, please include three letter species abbreviation (e.g.: hsa) -- mir/miR -- number (e.g.: 208) -- qualifier (e.g.: b) -- 3p/5p (if has). </p>
+		</td>
+	</tr>
+</table>
+<p style="margin-left: 0.75in; margin-bottom: 0in; line-height: 115%">
+<br/>
+
+</p>
+<ol type="I" start="2">
+	<li/> &nbsp <u><b>NMTSI, ASI, potential regulatory lineage, and potential specificity </b></u>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Probe</u>: The probe set ID on Affymetrix® miRNA 4.0 array is a unique number. The probe set name has the accession number and an Affymetrix suffix (e.g., “_st”).</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Name</u>: The name is the transcript ID of a small RNA. </p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>NMTSI</u>: Normalized maximum timepoint specificity index (NMTSI) is the index of the specificity of a small RNA that is potentially changed in one lineage. NMTSI values are ranging from 0.33 to 1. The small RNA with NMTSI value 0.33 is either upregulated or unchanged together in all lineages, while the small RNA with NMTSI value 1 is indicated to be uniquely upregulated in only one lineage. </p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>ASI</u>: Across-tissue specificity index (ATSI) is the index of the specificity of a small RNA that is potentially expressed in one tissue. ATSI values are ranging from 0 to 1. The small RNA with ATSI value 0 is distributed evenly in all tissues, while the small RNAs with ATSI value 1 is highly expressed in one tissue.  </p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Potential specificty (NMTSI)</u>: To identify spatiotemporal-specific small RNAs that go up or down at just one timepoint in a specific lineage, we performed an NMTSI analysis. For a certain small RNA, comparing the timepoint specificity index (TSI) of three lineages, the lineage with the maximum TSI is considered as its potential specificity indicated by the NMTSI analysis. </p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Potential specificity (ASI)</u>: o identify spatiotemporal-specific small RNAs that are maintained high expression from intermediate timepoints to the terminal timepoint in a specific lineage, we performed an ASI analysis. For a certain small RNA, comparing the normalized expression values of day 10 of three lineages, the lineage with the maximum expression value is considered as its potential specificity indicated by the ASI analysis. </p>
+		</td>
+	</tr>
+</table>
+<p style="margin-left: 0.5in; margin-bottom: 0in; line-height: 115%"><br/>
+
+</p>
+<ol type="I" start="3">
+	<li/> <u><b>Fold change</b></u> 
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Abbreviation</u>: HD: hepatocyte differentiation; KD: nephron progenitor differentiation; ND: neural progenitor differentiation. Number (0, 3, 6, 10): induction day.  </p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Lineage differentiation</u>: Hepatocytes, renal progenitors,
+			and neural progenitors are the representative lineage of three
+			germ layers. 
+			</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Fold change</u>: Relative expression value of small RNAs in three lineages. The expression values of the starting day (HD 0, KD 0, ND 0) are normalized as 0 ignoring the raw expression values. The expression values of other days are compared to day 0 of the corresponding lineage. </p>
+		</td>
+	</tr>
+</table>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<ol type="I" start="4">
+	<li/> <u><b>Spatiotemporal specificity</b></u> </ol>
+<p> &nbsp &nbsp Spatiotemporal specificity consists of Regulatory lineage specificity and Tissue specificity.  </p>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Abbreviation</u>: IH: immature hepatocytes; MM: metanephric mesenchyme; NPC: neural progenitor cells.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Actual Specificity (NMTSI)</u>: After intersection with the list of differentially expressed small RNA (absolute fold change &gt 2, P value &lt 0.05), the small RNAs that specifically regulate lineage differentiation (HD, KD, and ND) are identified. The lineages that they specifically regulate are displayed.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>Actual specificity (ASI)</u>: After intersection with the list of differentially expressed small RNA, the small RNAs that are specifically expressed in particular tissues (IH, MM, and NPC) are identified.</p>
+		</td>
+	</tr>
+</table>
+<p align="left" style="margin-bottom: 0in; line-height: 0.2in"><br/>
+
+</p>
+<ol type="I" start="5">
+	<li/><u><b>miRNA family distribution</b></u>
+</ol>
+<table width="4369" cellpadding="7" cellspacing="0">
+	<col width="4355">
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>miRNA member</u>: The name of a miRNA family member.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>miRNA family</u>: he miRNA family that a spatiotemporal-specific miRNA belongs to. Please pay attention that only the miRNA family containing at least five members will be displayed.</p>
+		</td>
+	</tr>
+	<tr>
+		<td width="4355" valign="top" style="border: none; padding: 0in">
+			<p>&nbsp &nbsp &nbsp<u>miRNA family distribution figure</u>: Inside each family, the number of IH-, MM-, NPC-specific family members were compared, and the proportions were presented as percentage stacked bar plot. The number of total family members is shown above the columns with balloons, representing the family size. The potential tissue specificity of particular miRNAs (IH, MM, or NPC) indicates their location in the stack bars (red, yellow or green).  </p>
+		</td>
+	</tr>
+</table>
+
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <footer>
+            <div class="row">
+                <div id="clustrmaps-widget" style="width: 10%; margin: 0 auto;" >
+                    <script type="text/javascript" id="clstr_globe" src="//cdn.clustrmaps.com/globe.js?d=ikHBLpOMkFz9QffIhxdWVZQVqVgh8tOKO66XS3dlE54"></script>
+                </div>
+        </footer>
+    </div>
+        
+    
+    
+    
+    
+    <!-- /.container -->
+
+    <!-- JavaScript -->
+    <script src="/static/km/js/jquery-1.10.2.js"></script>
+    <script src="/static/km/js/bootstrap.js"></script>
+
+
+
+</body></html>
